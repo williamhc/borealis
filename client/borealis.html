@@ -1,0 +1,96 @@
+<head>
+  <title> borealis - a better Aurora </title>
+</head>
+
+<body>
+  <div class='container-fluid'>
+    <div class='row-fluid'>
+      <div class='span8'>
+        {{> schedule}}
+      </div>
+      <div class='span4'>
+        {{> course_search }}
+        {{> course_list }}
+      </div>
+    </div>
+  </div>
+</body>
+
+<template name='schedule'>
+  <div>
+    this is the schedule
+  </div>
+</template>
+
+<template name='course_search'>
+  <form class="form-horizontal">
+    <legend>Courses</legend>
+    <div class="control-group">
+      <label class="control-label" for="facultySelect">Faculty: </label>
+      <div class="controls">
+        <select multiple="multiple" id="facultySelect">
+          <option>All faculties</option>
+          {{#each faculties}}
+            <option>{{ name }}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="yearSelect">Year: </label>
+      <div class="controls">
+        <select multiple="multiple" id="yearSelect">
+          <option>All years</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="creditHoursSelect">Credit hours: </label>
+      <div class="controls">
+        <select multiple="multiple" id="creditHoursSelect">
+          <option>All credits</option>
+          <option>3</option>
+          <option>6</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</template>
+
+<template name='course_list'>
+  <ul>
+    {{#each courses}}
+      <li>{{ name }}</li>
+    {{/each}}
+  </ul>
+</template>
+
+<!-- template(name="header")
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        a.btn.btn-navbar( data-toggle="collapse", data-target=".nav-collapse")
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        .row-fluid
+          a.brand(href="/") Borealis
+          .nav-collapse
+            ul.nav
+              li: a(href="/") Home
+              li: a(href="/Courses") Courses
+      a.top -->
+
+<!-- template(name="stuff")
+  .hi what's up?
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  {{greeting}}
+  <input type="button" value="Click" />
+</template>
+ -->
