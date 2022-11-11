@@ -1,4 +1,2 @@
-borealis
-========
+# Page 1
 
-A better student course registration system.
